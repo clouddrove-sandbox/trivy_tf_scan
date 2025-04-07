@@ -273,7 +273,7 @@ module "eks" {
   label_order = local.label_order
 
   # EKS
-  kubernetes_version     = "1.27"
+  kubernetes_version     = "1.30"
   endpoint_public_access = true
   # Networking
   vpc_id                            = module.vpc.vpc_id
@@ -306,14 +306,14 @@ module "eks" {
     }
   }
   managed_node_group = {
-    critical = {
-      name           = "${module.eks.cluster_name}-critical"
-      capacity_type  = "ON_DEMAND"
-      min_size       = 1
-      max_size       = 2
-      desired_size   = 2
-      instance_types = ["t3.medium"]
-    }
+    # critical = {
+    #   name           = "${module.eks.cluster_name}-critical"
+    #   capacity_type  = "ON_DEMAND"
+    #   min_size       = 1
+    #   max_size       = 2
+    #   desired_size   = 2
+    #   instance_types = ["t3.medium"]
+    # }
 
     application = {
       name                 = "${module.eks.cluster_name}-application"

@@ -2,7 +2,7 @@ provider "aws" {
   region = local.region
 }
 locals {
-  name                  = "clouddrove-eks"
+  name                  = "frontend-eks"
   region                = "eu-west-1"
   vpc_cidr_block        = module.vpc.vpc_cidr_block
   additional_cidr_block = "172.16.0.0/16"
@@ -335,8 +335,8 @@ module "eks" {
         min_size     = 2
         max_size     = 2 # Retains current max size
         desired_size = 2
-        start_time   = "2023-09-15T19:00:00Z"
-        end_time     = "2023-09-19T19:00:00Z"
+        start_time   = "2025-04-15T19:00:00Z"
+        end_time     = "2025-04-19T19:00:00Z"
         timezone     = "Europe/Amsterdam"
         recurrence   = "0 7 * * 1"
       },
@@ -344,8 +344,8 @@ module "eks" {
         min_size     = 0
         max_size     = 0 # Retains current max size
         desired_size = 0
-        start_time   = "2023-09-12T12:00:00Z"
-        end_time     = "2024-03-05T12:00:00Z"
+        start_time   = "2025-04-12T12:00:00Z"
+        end_time     = "2025-04-05T12:00:00Z"
         timezone     = "Europe/Amsterdam"
         recurrence   = "0 7 * * 5"
       }
@@ -408,8 +408,8 @@ module "eks" {
       min_size     = 2
       max_size     = 2 # Retains current max size
       desired_size = 2
-      start_time   = "2023-09-15T19:00:00Z"
-      end_time     = "2023-09-19T19:00:00Z"
+      start_time   = "2025-04-15T19:00:00Z"
+      end_time     = "2025-04-19T19:00:00Z"
       timezone     = "Europe/Amsterdam"
       recurrence   = "0 7 * * 1"
     },
@@ -417,8 +417,8 @@ module "eks" {
       min_size     = 0
       max_size     = 0 # Retains current max size
       desired_size = 0
-      start_time   = "2023-09-12T12:00:00Z"
-      end_time     = "2024-03-05T12:00:00Z"
+      start_time   = "2025-04-20T12:00:00Z"
+      end_time     = "2025-04-25T12:00:00Z"
       timezone     = "Europe/Amsterdam"
       recurrence   = "0 7 * * 5"
     }
