@@ -1,0 +1,25 @@
+name: Terraform Security Scan
+
+on:
+  push:
+    branches:
+        - tf_workflows
+  
+  workflow_dispatch:
+    inputs:
+      working_directory:
+        description: 'Directory to scan (defaults to ./examples/)'
+        required: false
+        default: '.'
+
+jobs:  
+  # Call checkov workflow
+  run-checkov:
+    name: Run checkov scan
+    uses: clouddrove-sandbox/terraform-shared-workflows/.github/workflows/checkov.yml@master
+    with:
+      working_directory: ${{ github.event.inputs.working_directory || '.' }}
+      framework: 'terraform'
+      skip_check: 'CKV_AWS_1,CKV_AWS_2' # Optional: comma-separated list of checks to skip
+    secrets:
+      TOKEN: ${{ secrets.TOKEN }}
