@@ -18,6 +18,6 @@ jobs:
     name: Run trivy scan
     uses: clouddrove-sandbox/terraform-shared-workflows/.github/workflows/trivy.yml@master
     with:
-      working_directory: ${{ github.event.inputs.working_directory || '/examples/aws_managed/' }}
+      working_directory: ${{ github.event.inputs.working_directory || 'examples/aws_managed/' }}
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
