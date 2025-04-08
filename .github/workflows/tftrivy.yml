@@ -1,4 +1,4 @@
-name: Terraform Security Scan
+name: Trivy Scan
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       working_directory:
-        description: 'Directory to scan (defaults to ./examples/)'
+        description: 'Directory to scan'
         required: false
         default: '.'
 

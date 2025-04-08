@@ -1,0 +1,15 @@
+name: 'Lock Threads'
+permissions:
+    issues: write
+    pull-requests: write
+    
+on:
+#   schedule:
+#     - cron: '50 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  lock:
+    uses: clouddrove-sandbox/terraform-shared-workflows/.github/workflows/lock-thread.yml@master
+    secrets:
+      github-token: ${{ secrets.REPO_TOKEN }}
