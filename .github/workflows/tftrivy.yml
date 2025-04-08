@@ -1,5 +1,4 @@
 name: Trivy Scan
-
 on:
   push:
     branches:
@@ -10,7 +9,7 @@ on:
       working_directory:
         description: 'Directory to scan'
         required: false
-        default: 'examples/aws_managed/'
+        default: './'
 
 jobs:
 # Call trivy workflow
@@ -18,6 +17,6 @@ jobs:
     name: Run trivy scan
     uses: clouddrove-sandbox/terraform-shared-workflows/.github/workflows/trivy.yml@master
     with:
-      working_directory: ${{ github.event.inputs.working_directory || 'examples/aws_managed/' }}
+      working_directory: ${{ github.event.inputs.working_directory || './' }}
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
