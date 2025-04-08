@@ -3,7 +3,7 @@ name: Checkov Scan
 on:
   push:
     branches:
-        - tf_workflows
+        - main1
   
   workflow_dispatch:
     inputs:
