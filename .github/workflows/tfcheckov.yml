@@ -10,7 +10,7 @@ on:
       working_directory:
         description: 'Directory to scan (defaults to ./examples/)'
         required: false
-        default: '.'
+        default: './'
 
 jobs:  
   # Call checkov workflow
@@ -18,7 +18,7 @@ jobs:
     name: Run checkov scan
     uses: clouddrove-sandbox/terraform-shared-workflows/.github/workflows/checkov.yml@master
     with:
-      working_directory: ${{ github.event.inputs.working_directory || '.' }}
+      working_directory: ${{ github.event.inputs.working_directory || './' }}
       framework: 'terraform'
       skip_check: 'CKV_AWS_1,CKV_AWS_2' # Optional: comma-separated list of checks to skip
     secrets:
