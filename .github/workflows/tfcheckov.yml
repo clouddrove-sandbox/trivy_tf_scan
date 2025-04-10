@@ -3,7 +3,7 @@ name: Checkov Scan
 on:
   push:
     branches:
-        - main
+        - main1
   
   workflow_dispatch:
     inputs:
@@ -20,6 +20,6 @@ jobs:
     with:
       working_directory: ${{ github.event.inputs.working_directory || './' }}
       framework: 'terraform'
-      skip_check: 'CKV_AWS_1,CKV_AWS_2' # Optional: comma-separated list of checks to skip
+      # skip_check: 'CKV_AWS_1,CKV_AWS_2'
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
