@@ -1,7 +1,8 @@
 ---
 name: Auto merge
 on:
-  pull_request:
+  # pull_request:
+    workflow_dispatch:
 jobs:
   auto-merge:
     uses: clouddrove/github-shared-workflows/.github/workflows/auto_merge.yml@master

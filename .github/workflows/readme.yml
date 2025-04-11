@@ -1,11 +1,11 @@
 name: Readme Workflow
 on:
-  push:
-    branches:
-      - master
-    paths-ignore:
-      - 'README.md'
-      - 'docs/**'
+  # push:
+  #   branches:
+  #     - master
+  #   paths-ignore:
+  #     - 'README.md'
+  #     - 'docs/**'
   workflow_dispatch:
 jobs:
   README:
