@@ -1,9 +1,11 @@
 name: Checkov Scan
 
 on:
+  pull_request:
+    branches: main
   push:
     branches:
-        - main1
+        - main
   
   workflow_dispatch:
     inputs:
