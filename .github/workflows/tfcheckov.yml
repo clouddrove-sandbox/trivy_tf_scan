@@ -5,7 +5,7 @@ on:
     branches: master1
   push:
     branches:
-        - master
+        - master1
   
   workflow_dispatch:
     inputs:

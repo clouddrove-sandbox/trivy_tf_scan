@@ -2,11 +2,11 @@ name: Trivy Scan
 
 on:
   pull_request:
-    branches: master1
+    branches: master
 
   push:
     branches:
-        - master
+        - master1
 
   workflow_dispatch:
     inputs:
